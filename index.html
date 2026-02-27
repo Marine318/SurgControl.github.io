@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+  <head>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f5f5f5;
+          color: #333;
+          margin: 0;
+          padding: 20px;
+      }
+      .paper {
+          margin-bottom: 20px;
+          background-color: #f9f9f9; /* 浅灰色背景 */
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          padding: 20px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .paper h2 {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          color: #5c6bc0; /* 柔和的蓝紫色 */
+      }
+      .paper p {
+          font-size: 16px;
+          line-height: 1.5;
+          color: #666; /* 柔和的灰色 */
+      }
+      .paper a {
+          color: #5c6bc0; /* 柔和的蓝紫色 */
+          text-decoration: none;
+          transition: color 0.3s ease;
+      }
+      .paper a:hover {
+          color: #3949ab; /* 柔和的深蓝色 */
+          text-decoration: underline;
+      }
+  </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./pic/Badge.png" type="image/png">
+    <title>
+      SurgControl: Controllable Video Generation for Endoscopic Surgery with Hybrid Guidance
+    </title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/project.css" media="screen" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/iconize.css" />
+    <script src="js/google-code-prettify/prettify.js"></script> -->
+  </head>
+
+  <!-- cover -->
+  <section>
+    <div class="jumbotron text-center mt-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            
+            <h2><img src="./pic/Badge.png" alt="" width="80" height="80">
+              <i>SurgControl</i>:
+              Controllable Video Generation for
+              Endoscopic Surgery with Hybrid Guidance <br>
+            </h2>
+            <hr>
+            <h6>
+                Anonymous Author
+              </h6>
+            <p>
+                Anonymous Institution
+            </p>
+
+            <div class="row justify-content-center">
+              <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://arxiv.org/abs/2403.11050" role="button"  target="_blank">
+                    <i class="fa fa-file"></i> Paper</a> </p>
+              </div>
+              <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="
+                    https://youtu.be/VBw3XtGdRu8" role="button"  target="_blank">
+                    <i class="fa fa-desktop"></i> Video </a> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- abstract -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h3>Abstract</h3>
+            <hr style="margin-top:0px">
+            <h6 style="color:#8899a5"> 
+              <!-- SyncDreamer is able to directly generate multiview consistent images, which allows 3D reconstruction by NeuS or NeRF without SDS loss.  -->
+              TL;DR:<i>SurgControl</i> is a <b>unified framework for generating high-fidelity and controllable endoscopic videos</b> conditioned on a single reference image and structural guidance, featuring a <b>Hybrid-Guided Video Diffusion Architecture</b> that outperforms state-of-the-art benchmarks in visual quality and controllability.
+            </h6>
+
+              <!-- <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                  <source src="video/teaser.mp4" type="video/mp4">
+              </video> -->
+
+			        <br>
+
+          <p class="text-left">
+            Synthesizing realistic endoscopic surgical videos holds significant promise for medical education, surgical training, and data augmentation for AI algorithms. However, existing approaches often suffer from the inability to stably generate high-fidelity videos and lack precise controllability over surgical motions. 
+            <br>
+            <br>
+            To address these challenges, we propose SurgControl, a unified framework for generating high-fidelity and controllable endoscopic videos conditioned on a single reference image and structural guidance. Specifically, SurgControl first introduce a data curation pipeline integrating Multimodal Large Language Models and annotation tools. Subsequently, SurgControl establish a large-scale multi-modal endoscopic dataset (Video-Text-Structure), effectively mitigating the issues of data scarcity and high annotation costs in this domain. Building upon this dataset, we present a Hybrid-Guided Video Diffusion Architecture. To achieve fine-grained control over surgical instruments, we leverage a pre-trained Large Video Diffusion Model as the generative backbone and introduce a light-weight Structural Control Module to encode structure sequences into dynamic guidance features. 
+            <br>
+            <br>
+            Experiments demonstrate that SurgControl outperforms state-of-the-art benchmarks in visual quality and controllability, establishing a new paradigm for medical video synthesis.
+          </p>
+
+          
+          <div class="video-container">
+            <video width="650" height="375" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="" controls>
+                <source src="video/ablation_hybrid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+          </div>
+
+        <p class="text-center">
+          <!-- Reverse process of SyncDreamer's multiview diffusion. -->
+          <!-- Sampled realistic endoscopy videos by <i>Endora</i>.  -->
+        </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h2>Comparison of video generation model results based on input image and text</h2>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="video/task_1.mp4" type="video/mp4">
+            </video>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h2>Comparison of the Controllability Results</h2>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="video/task_2.mp4" type="video/mp4">
+            </video>
+      </div>
+    </div>
+  </section>
+  <br>
+  
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h2>The ablation results of the ControlNet layer count</h2>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+              <source src="video/ablation_controlnet_layers.mp4" type="video/mp4">
+          </video>
+    </div>
+  </div>
+</section>
+<br>
+
+
+<!--   
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h2>More results</h2>
+            <hr style="margin-top:0px">
+            <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="video/more_results.mp4" type="video/mp4">
+            </video>
+
+          <p class="text-center">
+              Test images are downloaded from the Internet and some of them are from <a href="https://wiki.biligame.com/ys/%E9%A6%96%E9%A1%B5" target="_blank">Genshin Impact Wiki</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br> -->
+
+  <!-- citing
+  <div class="container">
+    <div class="row ">
+      <div class="col-12">
+          <h3>Citation</h3>
+          <hr style="margin-top:0px">
+              <pre style="background-color: #e9eeef;padding: 1.25em 1.5em">
+<code>@article{anonymous2024surgcontrol,
+  author    = {Anonymous Authors},
+  title     = {SurgControl: Controllable Video Generation for Endoscopic Surgery with Hybrid Guidance},
+  journal   = {Under Review},
+  year      = {2024}
+}</code>
+              </pre>
+          <hr>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- citing
+  <div class="container">
+    <div class="row ">
+      <div class="col-12">
+          <h3>Citation</h3>
+          <hr style="margin-top:0px">
+              <pre style="background-color: #e9eeef;padding: 1.25em 1.5em">
+                <code>@article{li2024endora,
+                    author    = {Chenxin Li and Hengyu Liu and Yifan Liu and Brandon Y. Feng, and Wuyang Li and Xinyu Liu, Zhen Chen and Jing shao and Yixuan Yuan},
+                    title     = {Endora: Video Generation Models as Endoscopy Simulators},
+                    journal   = {Arxiv},
+                    year      = {2024},
+                  } </code>
+              </pre>
+          <hr>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="container">
+    <div class="row ">
+      <div class="col-12">
+          <h3>Relevant Works</h3>
+
+          <hr style="margin-top:0px">
+          <div class="paper">
+              <h2><a>Endora: Video Generation Models as Endoscopy Simulators</a></h2>
+              <p>Li, C., Liu, H., Liu, Y., Feng, B.Y., Li, W., Liu, X., Chen, Z., Shao, J., Yuan, Y.: Endora: Video generation models as endoscopy simulators. In: International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI). pp. 470–480. Springer (2024)</p>
+              <p>
+                <a href="https://github.com/CUHK-AIM-Group/Endora">[Code]</a> | <a href="https://arxiv.org/abs/2403.11050">[Paper]</a> | <a href="https://en-do-ra.github.io/">[Page]</a>
+              </p>
+          </div>
+
+          <hr style="margin-top:0px">
+          <div class="paper">
+              <h2><a>MOFA-Video: Controllable Image Animation via Generative Motion Field Adaptions in Frozen Image-to-Video Diffusion Model</a></h2>
+              <p>Niu, M., Cun, X., Wang, X., Zhang, Y., Shan, Y., Zheng, Y.: Mofa-video: Controllable image animation via generative motion field adaptions in frozen image-to-video diffusion model. In: European conference on computer vision. pp. 111–128. Springer (2024)</p>
+              <p>
+                <a href="https://github.com/MyNiuuu/MOFA-Video">[Code]</a> | <a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/02842.pdf">[Paper]</a> | <a href="https://myniuuu.github.io/MOFA_Video/">[Page]</a>
+              </p>
+          </div>
+          
+          <hr style="margin-top:0px">
+          <div class="paper">
+              <h2><a>SurgSora: Object-Aware Diffusion Model for Controllable Surgical Video Generation</a></h2>
+              <p>Chen, T., Yang, S., Wang, J., Bai, L., Ren, H., Zhou, L.: Surgsora: Object-aware diffusion model for controllable surgical video generation. In: International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI). Springer (2025)</p>
+              <p>
+                <a href="https://surgsora.github.io/">[Page]</a> | <a href="https://arxiv.org/abs/2412.14018">[Paper]</a> | <a href="https://github.com/DavisMeee/SurgSora">[Code]</a>
+              </p>
+          </div>
+
+          <!-- <div class="paper">
+              <h2><a>Generator Versus Segmentor: Pseudo-healthy Synthesis</a></h2>
+              <p>
+                A pioneering attempt to recreate and edit medical visual content according to different physiological attributes
+  
+               </p>
+              <p>
+                <a href="https://link.springer.com/content/pdf/10.1007/978-3-030-87231-1_15.pdf">[Paper]</a> | <a href="https://github.com/Au3C2/GVS">[Code]</a>
+              </p>
+          </div> -->
+          
+          <hr>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer class="text-center" style="margin-bottom:10px">
+      Modified from <a href="https://en-do-ra.github.io/" target="_blank">this website</a>
+  </footer>
+
+</body>
+</html>
